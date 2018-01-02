@@ -10,8 +10,11 @@
 </head>
 <body>
 <div class="container">
+    <div class="pull-left">
+        <a href="/"><img class="logo-left" src="/static/images/vagrantlogo.png"></a>
+    </div>
     <div class="row">
-        <div class="col-md-4 chat-area">
+        <div class="col-md-6 chat-area">
             <ul class="chat">
             </ul>
             <div class="footer">
@@ -25,7 +28,12 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6" style="display: none;">
+        <div class="col-md-5">
+            <h4 style="margin-left: 50px">Questions asked</h4>
+            <ol class="questions" style="margin-left: 50px">
+            </ol>
+        </div>
+        <div class="col-md-5" style="display:none">
             <h4 style="margin-left: 50px">POST /api/v1</h4>
             <pre class="payloadPreview">
             </pre>
@@ -34,6 +42,8 @@
 </div>
 <div class="container">
     <footer class="footer">
+        <button class="btn btn-warning btn-cl" id="btn-clear" style="margin-left: 75px">
+            Clear Chat</button>
         <a href="/stories/home">Manage Stories</a>
     </footer>
 </div>

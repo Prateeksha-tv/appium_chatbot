@@ -86,6 +86,8 @@ $(document).ready(function () {
             $("#btn-input").val("");
             html_data = '<li class="right clearfix"><div class="chat-body clearfix"><strong class="primary-font">you</strong><p>' + userQuery + '</p> </div></li>';
             $("ul.chat").append(html_data);
+            html_data = '<li>' + userQuery + '</li>';
+            $("ol.questions").append(html_data);
             send_req(userQuery);
 
         }
@@ -96,7 +98,13 @@ $(document).ready(function () {
         $("#btn-input").val("");
         html_data = '<li class="right clearfix"><div class="chat-body clearfix"><strong class="primary-font">you</strong><p>' + userQuery + '</p> </div></li>';
         $("ul.chat").append(html_data);
+        html_data = '<li>' + userQuery + ' </li>';
+        $("ol.questions").append(html_data);
         send_req(userQuery);
+    })
+
+    $('#btn-clear').click(function () {
+        $("ul.chat").empty();
     })
 
     function Speech(say) {
