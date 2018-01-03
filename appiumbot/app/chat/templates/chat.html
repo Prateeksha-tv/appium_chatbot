@@ -10,11 +10,16 @@
 </head>
 <body>
 <div class="container">
-    <div class="pull-left">
-        <a href="/"><img class="logo-left" src="/static/images/vagrantlogo.png"></a>
-    </div>
+    <header class="header">
+        <div class="pull-left">
+            <a href="/"><img class="logo-left" src="/static/images/vagrantlogo.png"></a>
+        </div>
+    </header>
+    <h1 style="margin-left: 100px">ChatBot</h1>
+</div>
+<div class="container">
     <div class="row">
-        <div class="col-md-6 chat-area">
+        <div class="col-md-9 chat-area">
             <ul class="chat">
             </ul>
             <div class="footer">
@@ -28,10 +33,11 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-3">
             <h4 style="margin-left: 50px">Questions asked</h4>
-            <ol class="questions" style="margin-left: 50px">
-            </ol>
+
+            <ul class="questions" style="margin-left: 50px">
+            </ul>
         </div>
         <div class="col-md-5" style="display:none">
             <h4 style="margin-left: 50px">POST /api/v1</h4>
@@ -42,10 +48,11 @@
 </div>
 <div class="container">
     <footer class="footer">
-        <button class="btn btn-warning btn-cl" id="btn-clear" style="margin-left: 75px">
+        <button class="btn btn-warning btn-cl" id="btn-clear" style="margin-left: 10px">
             Clear Chat</button>
         <a href="/stories/home">Manage Stories</a>
     </footer>
 </div>
+
 </body>
 </html>

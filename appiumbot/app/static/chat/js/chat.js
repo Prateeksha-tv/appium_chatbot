@@ -35,7 +35,7 @@ $(document).ready(function () {
         $(".payloadPreview")[0].innerHTML = JSON.stringify(bot_say, null,5);
         payload  = bot_say;
         Speech(bot_say["speechResponse"]);
-        html_data = '<li class="left clearfix"><div class="chat-body clearfix"><strong class="primary-font">Vagrant</strong><p>' + bot_say["speechResponse"] + '</p> </div></li>';
+        html_data = '<li class="left clearfix" style="margin-right: 20px"><div class="chat-body clearfix"><strong class="primary-font">Vagrant</strong><p>' + bot_say["speechResponse"] + '</p> </div></li>';
         $("ul.chat").append(html_data);
         scrollToBottom();
     };
@@ -84,10 +84,10 @@ $(document).ready(function () {
         if (e.keyCode == 13) {
             userQuery = $("#btn-input").val();
             $("#btn-input").val("");
-            html_data = '<li class="right clearfix"><div class="chat-body clearfix"><strong class="primary-font">you</strong><p>' + userQuery + '</p> </div></li>';
+            html_data = '<li class="right clearfix" style="margin-right: 20px"><div class="chat-body clearfix"><strong class="primary-font">you</strong><p>' + userQuery + '</p> </div></li>';
             $("ul.chat").append(html_data);
-            html_data = '<li>' + userQuery + '</li>';
-            $("ol.questions").append(html_data);
+            html_data = '<li class = "list-question-item"><div>' + userQuery + '</div></li>';
+            $("ul.questions").append(html_data);
             send_req(userQuery);
 
         }
@@ -96,10 +96,10 @@ $(document).ready(function () {
     $('#btn-chat').click(function () {
         userQuery = $("#btn-input").val();
         $("#btn-input").val("");
-        html_data = '<li class="right clearfix"><div class="chat-body clearfix"><strong class="primary-font">you</strong><p>' + userQuery + '</p> </div></li>';
+        html_data = '<li class="right clearfix" style="margin-right: 20px"><div class="chat-body clearfix"><strong class="primary-font">you</strong><p>' + userQuery + '</p> </div></li>';
         $("ul.chat").append(html_data);
-        html_data = '<li>' + userQuery + ' </li>';
-        $("ol.questions").append(html_data);
+        html_data = '<li class = "list-question-item"><div>' + userQuery + ' </div></li>';
+        $("ul.questions").append(html_data);
         send_req(userQuery);
     })
 
