@@ -105,6 +105,7 @@ $(document).ready(function () {
 
     $('#btn-clear').click(function () {
         $("ul.chat").empty();
+        $("#btn-input").val("");
     })
 
     function Speech(say) {
