@@ -76,3 +76,43 @@
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
     background-color: #555;
 }
+
+ul.questions {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    position: relative;
+}
+li.list-question-item {
+    list-style-type: none;
+    border-left: 2px solid #000;
+    margin-left: 1em;
+}
+li.list-question-item div {
+    padding-left: 1em;
+    position: relative;
+}
+li.list-question-item div::before {
+    content:'';
+    position: absolute;
+    top: 0;
+    left: -2px;
+    bottom: 50%;
+    width: 0.75em;
+    border: 2px solid #000;
+    border-top: 0 none transparent;
+    border-right: 0 none transparent;
+}
+ul.questions > li:last-child {
+    border-left: 2px solid transparent;
+}
+
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
