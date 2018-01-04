@@ -1,6 +1,6 @@
 $(document).ready(function () {
     talking = true;
-
+    feedback = {};
     if (typeof(Storage) !== "undefined") {
         localStorage.setItem("firstname", "alfred");
     }
@@ -29,13 +29,14 @@ $(document).ready(function () {
 
     function scrollToBottom() {
         $(".chat")[0].scrollTop = $(".chat")[0].scrollHeight;
+        $(".questions")[0].scrollTop = $(".questions")[0].scrollHeight;
     }
 
     var put_text = function (bot_say) {
         $(".payloadPreview")[0].innerHTML = JSON.stringify(bot_say, null,5);
         payload  = bot_say;
         Speech(bot_say["speechResponse"]);
-        html_data = '<li class="left clearfix" style="margin-right: 20px"><div class="chat-body clearfix"><strong class="primary-font">Vagrant</strong><p>' + bot_say["speechResponse"] + '</p> </div></li>';
+        html_data = '<li class="left clearfix" style="margin-right: 20px"><img src="/static/images/vagrantlogo.png" alt="Avatar" style="width:100%;" class="avatar left"><div class="chat-body clearfix"><strong class="primary-font">Vagrant</strong><p>' + bot_say["speechResponse"] + '</p> </div></li>';
         $("ul.chat").append(html_data);
         scrollToBottom();
     };
@@ -84,7 +85,7 @@ $(document).ready(function () {
         if (e.keyCode == 13) {
             userQuery = $("#btn-input").val();
             $("#btn-input").val("");
-            html_data = '<li class="right clearfix" style="margin-right: 20px"><div class="chat-body clearfix"><strong class="primary-font">you</strong><p>' + userQuery + '</p> </div></li>';
+            html_data = '<li class="right clearfix" style="margin-right: 20px"><img src="/static/images/person.png" alt="Avatar" style="width:100%;" class="avatar"><div class="chat-body clearfix"><strong class="primary-font">You</strong><p>' + userQuery + '</p> </div></li>';
             $("ul.chat").append(html_data);
             html_data = '<li class = "list-question-item"><div>' + userQuery + '</div></li>';
             $("ul.questions").append(html_data);
@@ -96,7 +97,7 @@ $(document).ready(function () {
     $('#btn-chat').click(function () {
         userQuery = $("#btn-input").val();
         $("#btn-input").val("");
-        html_data = '<li class="right clearfix" style="margin-right: 20px"><div class="chat-body clearfix"><strong class="primary-font">you</strong><p>' + userQuery + '</p> </div></li>';
+        html_data = '<li class="right clearfix" style="margin-right: 20px"><img src="/static/images/person.png" alt="Avatar" style="width:100%;" class="avatar"><div class="chat-body clearfix"><strong class="primary-font">You</strong><p>' + userQuery + '</p> </div></li>';
         $("ul.chat").append(html_data);
         html_data = '<li class = "list-question-item"><div>' + userQuery + ' </div></li>';
         $("ul.questions").append(html_data);
@@ -120,4 +121,18 @@ $(document).ready(function () {
       }
     }
 
+    $("#submit").click(function() {
+        feedback.name=$("#name")[0].value;
+        feedback.email=$("#email")[0].value;
+        feedback.msg=$("#message")[0].value;
+        $.ajax({
+            url: '/',
+            type: 'POST',
+            data: JSON.stringify(feedback),
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            async: false
+        });
+        }
+    )
 });

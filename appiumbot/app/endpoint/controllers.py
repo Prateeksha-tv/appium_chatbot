@@ -64,6 +64,7 @@ def callApi(url, type, parameters, isJson=False):
 def api():
     requestJson = request.get_json(silent=True)
     resultJson = requestJson
+
     if requestJson:
 
         context = {}

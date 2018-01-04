@@ -73,3 +73,9 @@ class Story(Document):
     speechResponse = StringField(required=True)
     parameters = ListField(EmbeddedDocumentField(Parameter))
     labeledSentences = EmbeddedDocumentListField(LabeledSentences)
+
+
+class Feedback(Document):
+    name = StringField(max_length=100, required=True)
+    email = StringField(required=True)
+    msg = StringField(required=True)

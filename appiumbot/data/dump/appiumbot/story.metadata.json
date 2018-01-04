@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"appiumbot.story"},{"v":2,"unique":true,"key":{"storyName":1},"name":"storyName_1","ns":"appiumbot.story","background":false,"sparse":false}],"uuid":"d59d367e4f0f4108a2fec893be478dc6"}

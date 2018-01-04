@@ -7,6 +7,8 @@
     <script src="/static/commons/js/jquery.min.js"></script>
     <script src="/static/commons/js/bootstrap.min.js"></script>
     <script src="/static/chat/js/chat.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/chat/css/feedback.css">
+    <script src="/static/chat/js/feedback.js"></script>
 </head>
 <body>
 <div class="container">
@@ -22,8 +24,9 @@
         <div class="col-md-9 chat-area">
             <ul class="chat">
             </ul>
-            <div class="footer">
-                <div class="input-group">
+
+                <div class="footer">
+                    <div class="input-group">
                     <input id="btn-input" type="text" class="form-control input-sm"
                            placeholder="Type your message here..."/>
                     <span class="input-group-btn">
@@ -33,7 +36,7 @@
                 </div>
                 <div>
                 <button type = "reset" class="btn btn-warning btn-cl" id="btn-clear" style="margin-left: 2px; margin-top: 2px">
-                    Clear Chat</button>
+                    Clear Window</button>
                 </div>
             </div>
         </div>
@@ -54,8 +57,57 @@
     <footer class="footer">
 
         <a href="/stories/home">Manage Stories</a>
-    </footer>
+
+<div class="contact-container">
+    <h2>Feel free to get in touch.</h2>
+    <ul class="actions">
+        <li><a href="#" id="contact" class="button big">Contact Us</a></li>
+    </ul>
+</div>
+<div class="cd-popup contact" role="alert">
+    <form name="contactform" id="contactform" class="contact-form">
+        <div class="cd-popup-container" style="">
+            <p style="">
+                <a href="" class="cd-popup-close cd-close-button">
+                    <i class="fa fa-times" style="pointer-events:none;"></i>
+                </a>
+            </p>
+
+            <div class="name">
+                <label for="name">Name</label>
+                <input class="btn-input" type="text" id="name" name="name" />
+            </div>
+            <div class="email">
+                <label for="email">Email</label>
+                <input class="btn-input" type="text" id="email" name="email" />
+            </div>
+            <div class="message">
+                <label for="message">Message</label>
+                <textarea class="message" id="message" name="message"></textarea>
+            </div>
+            <br>
+            <div style="text-align:left">
+                <input class="btn-input" type="checkbox" id="human" name="human" />
+                <label for="human">I am a human and not a robot.</label>
+            </div>
+            <br>
+            <div class="submit">
+                <p class="user-message" id="contactblurb"> Questions, suggestions, and general comments are all welcome!</p>
+                <input class="btn-input" type="submit" name="submit" id="submit" value="Send" />
+            </div>
+        </div>
+    </form>
 </div>
 
+<div class="cd-popup notification" role="alert">
+    <div class="cd-popup-container">
+        <a href="" class="cd-popup-close cd-close-button"><i class="fa fa-times" style="pointer-events:none;"></i></a>
+        <p>
+        <h3 id="notification-text">Thanks for getting in touch!</h3>
+        </p>
+    </div>
+</div>
+    </footer>
+</div>
 </body>
 </html>

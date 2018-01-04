@@ -7,9 +7,19 @@
     list-style: none;
     margin: 0;
     padding: 1px;
-    height: 600px;
+    height: 62%;
     overflow-y: scroll;
 }
+
+.questions{
+    list-style: none;
+    margin: 0;
+    padding: 1px;
+    height: 500px;
+    overflow-y: scroll;
+}
+
+
 .chat li
 {
     margin-bottom: 10px;
@@ -37,8 +47,15 @@
 {
     position: relative;
     margin: 0;
-    color: #777777;
 }
+
+.chat li .chat-body p.question
+{
+    position: relative;
+    margin: 0;
+    color: #ffffff;
+}
+
 .chat-area .footer{
     margin-top: 10px;
 }
@@ -46,7 +63,7 @@
     margin: 0 auto;
 }
 .footer{
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .payloadPreview{
@@ -107,7 +124,7 @@ ul.questions > li:last-child {
     border-left: 2px solid transparent;
 }
 
-h1 {
+h1{
     display: block;
     font-size: 2em;
     margin-top: 0.67em;
@@ -115,4 +132,49 @@ h1 {
     margin-left: 0;
     margin-right: 0;
     font-weight: bold;
+}
+
+/* Chat containers */
+.clearfix{
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 25px;
+}
+
+
+.left.clearfix {
+    border: 1px solid #999999;
+    background-color: #f1f1f1;
+    float: left;
+    clear: both;
+}
+
+/* Darker chat container */
+.right.clearfix {
+    border: 1px solid #999999;
+    background-color: #ddd;
+    float: right;
+    clear: both;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    display: table;
+}
+
+.avatar {
+    float: right;
+    max-width: 25px;
+    width: 100%;
+    margin-right: 2px;
+    border-radius: 50%;
+}
+
+.avatar.left {
+    float: left;
+    max-width: 30px;
+    width: 100%;
+    margin-left: 2px;
+    border-radius: 50%;
 }
